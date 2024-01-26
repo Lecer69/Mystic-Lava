@@ -8,7 +8,7 @@ plugins {
     id 'java'
 }
 
-tasks.register('api-jar', Jar) {
+jar {
     archiveFileName = "MysticLavaAPI-${version}.jar"
     destinationDirectory = file("$rootDir/output")
 }

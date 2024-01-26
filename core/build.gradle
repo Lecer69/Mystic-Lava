@@ -16,8 +16,7 @@ dependencies {
     implementation project(':api')
 }
 
-tasks.register('plugin-jar', Jar) {
+jar {
     archiveFileName = "MysticLava-${version}.jar"
     destinationDirectory = file("$rootDir/output")
 }
-
