@@ -1,4 +1,11 @@
-name: core
+name: MysticLava
 version: '${version}'
-main: dev.lecer.mystic.mysticlava.core.Core
-api-version: '1.20'
+author: "Lecer"
+website: lecer.ir
+softdepend: [PlaceholderAPI, WorldEdit]
+main: dev.lecer.mystic.mysticlava.core.MysticLava
+description: An advanced floor is lava plugin
+api-version: '1.13'
+libraries:
+  - mysql:mysql-connector-java:8.0.33
+  - com.zaxxer:HikariCP:5.1.0
