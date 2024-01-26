@@ -20,3 +20,12 @@ jar {
     archiveFileName = "MysticLava-${version}.jar"
     destinationDirectory = file("$rootDir/output")
 }
+
+processResources {
+    def props = [version: version]
+    inputs.properties props
+    filteringCharset 'UTF-8'
+    filesMatching('plugin.yml') {
+        expand props
+    }
+}
