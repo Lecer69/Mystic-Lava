@@ -1,4 +1,0 @@
-name: MysticLava
-version: '${version}'
-main: dev.lecer.mystic.mysticlava.mysticlava.core.MysticLava
-api-version: '1.20'

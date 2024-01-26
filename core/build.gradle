@@ -1,0 +1,23 @@
+buildscript {
+    repositories {
+        maven { url uri("https://plugins.gradle.org/m2/") }
+    }
+}
+
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenLocal()
+}
+
+dependencies {
+    implementation project(':api')
+}
+
+tasks.register('plugin-jar', Jar) {
+    archiveFileName = "MysticLava-${version}.jar"
+    destinationDirectory = file("$rootDir/output")
+}
+

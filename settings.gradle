@@ -1,1 +1,3 @@
 rootProject.name = 'MysticLava'
+include 'core'
+include 'api'
