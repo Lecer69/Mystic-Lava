@@ -8,6 +8,14 @@ plugins {
     id 'java'
 }
 
+repositories {
+    mavenLocal()
+}
+
+dependencies {
+    compileOnly project(':core')
+}
+
 jar {
     archiveFileName = "MysticLavaAPI-${version}.jar"
     destinationDirectory = file("$rootDir/output")
