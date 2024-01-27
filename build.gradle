@@ -20,12 +20,14 @@ allprojects {
             // Minecraft
             compileOnly 'org.spigotmc:spigot-api:1.20.4-R0.1-SNAPSHOT'
             compileOnly 'me.clip:placeholderapi:2.11.3'
+            compileOnly 'com.github.retrooper:packetevents:v2.2.0'
 
             // Gson
             compileOnly 'com.google.code.gson:gson:2.10.1'
 
             // Sql
             compileOnly 'mysql:mysql-connector-java:8.0.33'
+            compileOnly 'org.xerial:sqlite-jdbc:3.42.0.0'
             compileOnly("com.zaxxer:HikariCP:5.1.0") {
                 exclude group: "org.slf4j", module: "slf4j-api"
             }

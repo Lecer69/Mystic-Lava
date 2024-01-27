@@ -7,5 +7,7 @@ main: dev.lecer.mystic.mysticlava.core.MysticLava
 description: An advanced floor is lava plugin
 api-version: '1.13'
 libraries:
+  - com.github.retrooper:packetevents:v2.2.0
+  - org.xerial:sqlite-jdbc:3.42.0.0
   - mysql:mysql-connector-java:8.0.33
   - com.zaxxer:HikariCP:5.1.0
