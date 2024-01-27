@@ -13,4 +13,13 @@ public class ServerUtils {
     public void ifPluginEnabled(String pluginName, Runnable runnable) {
         if (isPluginEnabled(pluginName)) runnable.run();
     }
+
+    public boolean isClassExist(String clazz) {
+        try {
+            Class.forName(clazz);
+            return true;
+        } catch (ClassNotFoundException exception) {
+            return false;
+        }
+    }
 }

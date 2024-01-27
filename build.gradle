@@ -10,6 +10,7 @@ allprojects {
 
         repositories {
             mavenCentral()
+            maven { url 'https://jitpack.io' }
             maven { url 'https://oss.sonatype.org/content/groups/public/' }
             maven { url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/' }
             maven { url 'https://repo.extendedclip.com/content/repositories/placeholderapi/' }
