@@ -12,6 +12,7 @@ allprojects {
             mavenCentral()
             maven { url 'https://jitpack.io' }
             maven { url 'https://oss.sonatype.org/content/groups/public/' }
+            maven { url 'https://repo.papermc.io/repository/maven-public/' }
             maven { url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/' }
             maven { url 'https://repo.extendedclip.com/content/repositories/placeholderapi/' }
             maven { url 'https://projectlombok.org/edge-releases' }
@@ -19,7 +20,7 @@ allprojects {
 
         dependencies {
             // Minecraft
-            compileOnly 'org.spigotmc:spigot-api:1.20.4-R0.1-SNAPSHOT'
+            compileOnly 'io.papermc.paper:paper-api:1.20.4-R0.1-SNAPSHOT'
             compileOnly 'me.clip:placeholderapi:2.11.3'
             compileOnly 'com.github.retrooper:packetevents:v2.2.0'
 
