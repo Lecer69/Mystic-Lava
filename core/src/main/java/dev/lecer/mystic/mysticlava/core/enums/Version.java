@@ -71,23 +71,23 @@ public enum Version {
     }
 
     public static boolean is(@NotNull Version version) {
-        return CURRENT == version;
+        return Version.getCurrentVersion() == version;
     }
 
     public static boolean after(@NotNull Version version) {
-        return CURRENT.ordinal() > version.ordinal();
+        return Version.getCurrentVersion().ordinal() > version.ordinal();
     }
 
     public static boolean afterOrEqual(@NotNull Version version) {
-        return CURRENT.ordinal() >= version.ordinal();
+        return Version.getCurrentVersion().ordinal() >= version.ordinal();
     }
 
     public static boolean before(@NotNull Version version) {
-        return CURRENT.ordinal() < version.ordinal();
+        return Version.getCurrentVersion().ordinal() < version.ordinal();
     }
 
     public static boolean beforeOrEqual(@NotNull Version version) {
-        return CURRENT.ordinal() <= version.ordinal();
+        return Version.getCurrentVersion().ordinal() <= version.ordinal();
     }
 
     public static boolean supportsHex() {
