@@ -4,18 +4,18 @@ import com.github.retrooper.packetevents.PacketEvents;
 import com.github.retrooper.packetevents.PacketEventsAPI;
 import com.github.retrooper.packetevents.event.PacketListener;
 import com.github.retrooper.packetevents.event.PacketListenerPriority;
+import dev.lecer.mystic.mysticlava.api.MysticLavaPlugin;
 import dev.lecer.mystic.mysticlava.core.enums.Version;
 import dev.lecer.mystic.mysticlava.core.hook.PlaceholderAPIHook;
 import dev.lecer.mystic.mysticlava.core.utils.ServerUtils;
 import io.github.retrooper.packetevents.factory.spigot.SpigotPacketEventsBuilder;
 import lombok.Getter;
 import org.bukkit.event.Listener;
-import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.List;
 
 @Getter
-public final class MysticLava extends JavaPlugin {
+public final class MysticLava extends MysticLavaPlugin {
 
     private static MysticLava INSTANCE;
 
@@ -25,6 +25,7 @@ public final class MysticLava extends JavaPlugin {
     @Override
     public void onLoad() {
         INSTANCE = this;
+        MysticLavaPlugin.setInstance(this);
         Version.bootstrap();
     }
 

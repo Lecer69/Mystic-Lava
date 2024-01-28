@@ -1,32 +1,27 @@
 package dev.lecer.mystic.mysticlava.api;
 
-import dev.lecer.mystic.mysticlava.core.MysticLava;
 import lombok.experimental.UtilityClass;
 
 @UtilityClass
 public class MysticLavaAPI {
 
     public String getPluginName() {
-        return instance().getDescription().getName();
+        return MysticLavaPlugin.getInstance().getDescription().getName();
     }
 
     public String getVersion() {
-        return instance().getDescription().getVersion();
+        return MysticLavaPlugin.getInstance().getDescription().getVersion();
     }
 
     public String getAuthors() {
-        return String.join(", ", instance().getDescription().getAuthors());
+        return String.join(", ", MysticLavaPlugin.getInstance().getDescription().getAuthors());
     }
 
     public String getDescription() {
-        return instance().getDescription().getDescription();
+        return MysticLavaPlugin.getInstance().getDescription().getDescription();
     }
 
     public String getWebsite() {
-        return instance().getDescription().getWebsite();
-    }
-
-    private MysticLava instance() {
-        return MysticLava.getInstance();
+        return MysticLavaPlugin.getInstance().getDescription().getWebsite();
     }
 }
