@@ -59,7 +59,9 @@ public final class MysticLava extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        ServerUtils.ifPluginEnabled("PlaceholderAPI", () -> this.placeholderAPI.unregister());
+        ServerUtils.ifPluginEnabled("PlaceholderAPI", () -> {
+            if (this.placeholderAPI != null) this.placeholderAPI.unregister();
+        });
     }
 
     private List<PacketListener> packetListeners() {
