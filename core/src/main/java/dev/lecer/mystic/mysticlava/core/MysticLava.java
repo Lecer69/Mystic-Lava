@@ -22,11 +22,14 @@ public final class MysticLava extends MysticLavaPlugin {
     private PlaceholderAPIHook placeholderAPI;
     private PacketEventsAPI<?> packetEventsAPI;
 
+    private boolean folia;
+
     @Override
     public void onLoad() {
         INSTANCE = this;
         MysticLavaPlugin.setInstance(this);
         Version.bootstrap();
+        this.folia = ServerUtils.isFolia();
     }
 
     @Override

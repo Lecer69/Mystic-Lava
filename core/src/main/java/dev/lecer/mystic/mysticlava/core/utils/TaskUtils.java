@@ -1,8 +1,11 @@
 package dev.lecer.mystic.mysticlava.core.utils;
 
 import dev.lecer.mystic.mysticlava.core.MysticLava;
+import io.papermc.paper.threadedregions.scheduler.AsyncScheduler;
+import io.papermc.paper.threadedregions.scheduler.GlobalRegionScheduler;
+import io.papermc.paper.threadedregions.scheduler.RegionScheduler;
 import lombok.experimental.UtilityClass;
-import org.bukkit.plugin.Plugin;
+import org.bukkit.Server;
 import org.bukkit.scheduler.BukkitScheduler;
 import org.bukkit.scheduler.BukkitTask;
 
@@ -33,11 +36,30 @@ public class TaskUtils {
         return scheduler().runTaskTimerAsynchronously(plugin(), runnable, delay, period);
     }
 
-    private BukkitScheduler scheduler() {
-        return plugin().getServer().getScheduler();
+    public AsyncScheduler getAsyncScheduler() {
+        return server().getAsyncScheduler();
     }
 
-    private Plugin plugin() {
+    public RegionScheduler getRegionScheduler() {
+        return server().getRegionScheduler();
+    }
+
+    public GlobalRegionScheduler getGlobalRegionScheduler() {
+        return server().getGlobalRegionScheduler();
+    }
+
+    private BukkitScheduler scheduler() {
+        if (plugin().isFolia())
+            throw new RuntimeException("Server is running on Folia, and you cannot use BukkitScheduler.");
+
+        return server().getScheduler();
+    }
+
+    private Server server() {
+        return plugin().getServer();
+    }
+
+    private MysticLava plugin() {
         return MysticLava.getInstance();
     }
 }

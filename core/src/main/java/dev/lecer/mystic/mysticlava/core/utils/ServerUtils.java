@@ -14,6 +14,10 @@ public class ServerUtils {
         if (isPluginEnabled(pluginName)) runnable.run();
     }
 
+    public boolean isFolia() {
+        return isClassExist("io.papermc.paper.threadedregions.RegionizedServer");
+    }
+
     public boolean isClassExist(String clazz) {
         try {
             Class.forName(clazz);
