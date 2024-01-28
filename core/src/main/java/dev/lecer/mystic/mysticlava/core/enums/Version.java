@@ -1,5 +1,6 @@
 package dev.lecer.mystic.mysticlava.core.enums;
 
+import dev.lecer.mystic.mysticlava.core.utils.LoggerUtils;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.bukkit.Bukkit;
@@ -42,6 +43,9 @@ public enum Version {
 
     public static void bootstrap() {
         CURRENT = Version.fromString(getStringVersion());
+
+        if (getCurrentVersion() != null)
+            LoggerUtils.info("Server is running on %s version.".formatted(getCurrentVersion().name()));
     }
 
     private static String getStringVersion() {
